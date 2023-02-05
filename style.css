@@ -1,0 +1,130 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 20px 0;
+    text-align: center;
+}
+
+img {
+    width: 600px;
+    height: 450px;
+}
+
+
+.drop-zone {
+    height: 300px;
+    width: 600px;
+    border: 2px dashed #ddd;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 5px;
+    margin: 50px auto;
+  }
+  
+  .drop-zone-content {
+    text-align: center;
+  }
+
+  .box__dragndrop,
+.box__uploading,
+.box__success,
+.box__error {
+  display: none;
+}
+
+.box{
+	  width: 600px;
+  height: 450px;
+  background-color: grey;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  outline: 2px dashed transparent;
+  outline-offset: -10px;
+  transition: outline-offset .15s ease-in-out, background-color .15s linear;
+}
+
+.box.has-advanced-upload {
+	background-color: white;
+	outline: 2px dashed black;
+	outline-offset: -10px;
+  }
+  .box.has-advanced-upload .box__dragndrop {
+	display: inline;
+  }
+
+  .box.is-dragover {
+	background-color: grey;
+  }
+
+  .box.is-uploading .box__input {
+	visibility: none;
+  }
+  .box.is-uploading .box__uploading {
+	display: block;
+  }
+
+  #drop-zone {
+	background-color: #f2f2f2;
+	border: 2px dashed #ccc;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	border-radius: 20px;
+	text-align: center;
+	padding: 50px;
+	margin: 20px;
+}
+  
+  .drop-zone.drag-over {
+	background-color: #6d6d6d;
+	border-color: #000;
+  }
+
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 20px;
+	background-color: #226ae6;
+	border-bottom: 1px solid #ddd;
+	height: 60px;
+}
+
+.nav ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	/* border: 1px solid black; */
+}
+
+.nav ul li{
+	list-style: none;
+	display: inline-block;
+	margin: 0 10px;
+}
+
+.nav ul li a{
+	color: white;
+	text-decoration: none;
+	font-size: 20px;
+	/* border: 2px solid red; */
+}
+  
+  
+
+
+  
