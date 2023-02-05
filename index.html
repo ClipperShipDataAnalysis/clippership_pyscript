@@ -1,0 +1,38 @@
+<html>
+   <head>
+       <link rel="stylesheet"
+           href="https://pyscript.net/alpha/pyscript.css" />
+       <script defer
+           src="https://pyscript.net/alpha/pyscript.js">
+       </script>
+       <py-env>
+        - pandas
+        - matplotlib
+        - numpy
+        - pymongo
+        - json_normalize
+        - json
+
+       </py-env>
+   </head>
+   <body>
+       <!-- HTML layout code goes here -->
+       <py-script>
+        import pandas as pd
+        import matplotlib.pyplot as plt
+        import numpy as np
+        import pymongo
+        from pymongo import json_normalize
+        import json
+
+        client = pymongo.MongoClient("mongodb+srv://john:Jn4wXiyqcn6u1vGo@cluster0.lcwl3.mongodb.net/test")
+        mycollection = client.ClipperShipGrantData.ClipperShipGrantData
+        files = [] 
+        for doc in mycollection.find():
+            files.append(doc)
+        print(files)
+
+
+       </py-script>
+   </body>
+</html>
