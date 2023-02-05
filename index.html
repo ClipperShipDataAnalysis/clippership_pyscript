@@ -10,7 +10,6 @@
         - pandas
         - matplotlib
         - numpy
-
        </py-env>
        <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,12 +54,134 @@
        <footer>
    
        </footer>
+
+
+       <p>Upload a csv File</p>
+       <ol>
+         <li>
+           <label for="upload">File Upload:</label>
+           <input type="file" name="upload" id="upload">
+         </li>
+       </ol>
+
+       <py-script> print("My Lineplot")</py-script>
+
+       <div id="lineplot"></div>
+
+       <py-script output="lineplot">
+
+           import pandas as pd
+           import numpy as np
+           import matplotlib.pyplot as plt
+           import os
+           dics = [{'index': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 'columns': ['Clipper Ship Standardized Excel Sheet', 'Unnamed: 1'], 'data': [['Instructions ', "nan"], ['Instructions: Please name this excel sheet using this template: Company_Name_ClipperShipGrant_Year Example: Brandeis_University_ClipperShipGrant_2023', "nan"], ['*may add more instructions and make it look pretty and professional i guess', "nan"], ["nan", "nan"], ['Company Specifics', "nan"], ['Company Name', 'Brandeis University'], ['Quick Description', 'A univeristy'], ['Contact Info', 'idk man yolo'], ['Current Fiscal Year', 2019], ['Overall Numbers', "nan"], ['Please Indicate The Amount Of Money Given By Clipper Ship', 6750], ['Please Indicate The Amount Of Money Used By Clipper Ship', 5210], ["Please indicate the number of Opportunity Youth (ages 16-24) placed into employment in FY' 23:", 732], ["As appropriate, please indicate the number of Opportunity Youth successfully placed into supported\xa0or permanent housing\xa0in FY' 23:", 723], ['Please Indicate Number Of Youth In Program', 292], ["Please Indicate Number Of Opportunity Youth achieving different educational milestones in FY' 23, such as HS diploma, GED, college matriculation", 21]], 'index_names': [None], 'column_names': [None]}, {'index': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 'columns': ['Clipper Ship Standardized Excel Sheet', 'Unnamed: 1'], 'data': [['Instructions ', "nan"], ['Instructions: Please name this excel sheet using this template: Company_Name_ClipperShipGrant_Year Example: Brandeis_University_ClipperShipGrant_2023', "nan"], ['*may add more instructions and make it look pretty and professional i guess', "nan"], ["nan", "nan"], ['Company Specifics', "nan"], ['Company Name', 'Brandeis University'], ['Quick Description', 'A univeristy'], ['Contact Info', 'idk man yolo'], ['Current Fiscal Year', 2020], ['Overall Numbers', "nan"], ['Please Indicate The Amount Of Money Given By Clipper Ship', 5421], ['Please Indicate The Amount Of Money Used By Clipper Ship', 2000], ["Please indicate the number of Opportunity Youth (ages 16-24) placed into employment in FY' 23:", 124], ["As appropriate, please indicate the number of Opportunity Youth successfully placed into supported\xa0or permanent housing\xa0in FY' 23:", 247], ['Please Indicate Number Of Youth In Program', 392], ["Please Indicate Number Of Opportunity Youth achieving different educational milestones in FY' 23, such as HS diploma, GED, college matriculation", 42]], 'index_names': [None], 'column_names': [None]}, {'index': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 'columns': ['Clipper Ship Standardized Excel Sheet', 'Unnamed: 1'], 'data': [['Instructions ', "nan"], ['Instructions: Please name this excel sheet using this template: Company_Name_ClipperShipGrant_Year Example: Brandeis_University_ClipperShipGrant_2023', "nan"], ['*may add more instructions and make it look pretty and professional i guess', "nan"], ["nan", "nan"], ['Company Specifics', "nan"], ['Company Name', 'Brandeis University'], ['Quick Description', 'A univeristy'], ['Contact Info', 'idk man yolo'], ['Current Fiscal Year', 2021], ['Overall Numbers', "nan"], ['Please Indicate The Amount Of Money Given By Clipper Ship', 5500], ['Please Indicate The Amount Of Money Used By Clipper Ship', 2211], ["Please indicate the number of Opportunity Youth (ages 16-24) placed into employment in FY' 23:", 136], ["As appropriate, please indicate the number of Opportunity Youth successfully placed into supported\xa0or permanent housing\xa0in FY' 23:", 257], ['Please Indicate Number Of Youth In Program', 421], ["Please Indicate Number Of Opportunity Youth achieving different educational milestones in FY' 23, such as HS diploma, GED, college matriculation", 57]], 'index_names': [None], 'column_names': [None]}, {'index': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 'columns': ['Clipper Ship Standardized Excel Sheet', 'Unnamed: 1'], 'data': [['Instructions ', "nan"], ['Instructions: Please name this excel sheet using this template: Company_Name_ClipperShipGrant_Year Example: Brandeis_University_ClipperShipGrant_2023', "nan"], ['*may add more instructions and make it look pretty and professional i guess', "nan"], ["nan", "nan"], ['Company Specifics', "nan"], ['Company Name', 'Brandeis University'], ['Quick Description', 'A univeristy'], ['Contact Info', 'idk man yolo'], ['Current Fiscal Year', 2022], ['Overall Numbers', "nan"], ['Please Indicate The Amount Of Money Given By Clipper Ship', 6000], ['Please Indicate The Amount Of Money Used By Clipper Ship', 1800], ["Please indicate the number of Opportunity Youth (ages 16-24) placed into employment in FY' 23:", 400], ["As appropriate, please indicate the number of Opportunity Youth successfully placed into supported\xa0or permanent housing\xa0in FY' 23:", 150], ['Please Indicate Number Of Youth In Program', 700], ["Please Indicate Number Of Opportunity Youth achieving different educational milestones in FY' 23, such as HS diploma, GED, college matriculation", 60]], 'index_names': [None], 'column_names': [None]}, {'index': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 'columns': ['Clipper Ship Standardized Excel Sheet', 'Unnamed: 1'], 'data': [['Instructions ', "nan"], ['Instructions: Please name this excel sheet using this template: Company_Name_ClipperShipGrant_Year Example: Brandeis_University_ClipperShipGrant_2023', "nan"], ['*may add more instructions and make it look pretty and professional i guess', "nan"], ["nan", "nan"], ['Company Specifics', "nan"], ['Company Name', 'Brandeis University'], ['Quick Description', 'A univeristy'], ['Contact Info', 'idk man yolo'], ["Current Fiscal Year", "2019"], ['Overall Numbers', "nan"], ['Please Indicate The Amount Of Money Given By Clipper Ship', 2000], ['Please Indicate The Amount Of Money Used By Clipper Ship', 1800], ["Please indicate the number of Opportunity Youth (ages 16-24) placed into employment in FY' 23:", 150], ["As appropriate, please indicate the number of Opportunity Youth successfully placed into supported\xa0or permanent housing\xa0in FY' 23:", 200], ['Please Indicate Number Of Youth In Program', 400], ["Please Indicate Number Of Opportunity Youth achieving different educational milestones in FY' 23, such as HS diploma, GED, college matriculation", 50]], 'index_names': [None], 'column_names': [None]}, {'index': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 'columns': ['Clipper Ship Standardized Excel Sheet', 'Unnamed: 1'], 'data': [['Instructions ', "nan"], ['Instructions: Please name this excel sheet using this template: Company_Name_ClipperShipGrant_Year Example: Brandeis_University_ClipperShipGrant_2023', "nan"], ['*may add more instructions and make it look pretty and professional i guess', "nan"], ["nan", "nan"], ['Company Specifics', "nan"], ['Company Name', 'Capital One'], ['Quick Description', 'A Bank'], ['Contact Info', 'idk man yolo'], ['Current Fiscal Year', 2019], ['Overall Numbers', "nan"], ['Please Indicate The Amount Of Money Given By Clipper Ship', 4302], ['Please Indicate The Amount Of Money Used By Clipper Ship', 3958], ["Please indicate the number of Opportunity Youth (ages 16-24) placed into employment in FY' 23:", 132], ["As appropriate, please indicate the number of Opportunity Youth successfully placed into supported\xa0or permanent housing\xa0in FY' 23:", 238], ['Please Indicate Number Of Youth In Program', 395], ["Please Indicate Number Of Opportunity Youth achieving different educational milestones in FY' 23, such as HS diploma, GED, college matriculation", 52]], 'index_names': [None], 'column_names': [None]}, {'index': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 'columns': ['Clipper Ship Standardized Excel Sheet', 'Unnamed: 1'], 'data': [['Instructions ', "nan"], ['Instructions: Please name this excel sheet using this template: Company_Name_ClipperShipGrant_Year Example: Brandeis_University_ClipperShipGrant_2023', "nan"], ['*may add more instructions and make it look pretty and professional i guess', "nan"], ["nan", "nan"], ['Company Specifics', "nan"], ['Company Name', 'Capital One'], ['Quick Description', 'a bank'], ['Contact Info', 'idk man yolo'], ['Current Fiscal Year', 2020], ['Overall Numbers', "nan"], ['Please Indicate The Amount Of Money Given By Clipper Ship', 12000], ['Please Indicate The Amount Of Money Used By Clipper Ship', 11231], ["Please indicate the number of Opportunity Youth (ages 16-24) placed into employment in FY' 23:", 743], ["As appropriate, please indicate the number of Opportunity Youth successfully placed into supported\xa0or permanent housing\xa0in FY' 23:", 231], ['Please Indicate Number Of Youth In Program', 458], ["Please Indicate Number Of Opportunity Youth achieving different educational milestones in FY' 23, such as HS diploma, GED, college matriculation", 482]], 'index_names': [None], 'column_names': [None]}, {'index': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 'columns': ['Clipper Ship Standardized Excel Sheet', 'Unnamed: 1'], 'data': [['Instructions ', "nan"], ['Instructions: Please name this excel sheet using this template: Company_Name_ClipperShipGrant_Year Example: Brandeis_University_ClipperShipGrant_2023', "nan"], ['*may add more instructions and make it look pretty and professional i guess', "nan"], ["nan", "nan"], ['Company Specifics', "nan"], ['Company Name', 'Capital One'], ['Quick Description', 'A Bank'], ['Contact Info', 'idk man yolo'], ['Current Fiscal Year', 2022], ['Overall Numbers', "nan"], ['Please Indicate The Amount Of Money Given By Clipper Ship', 4000], ['Please Indicate The Amount Of Money Used By Clipper Ship', 3500], ["Please indicate the number of Opportunity Youth (ages 16-24) placed into employment in FY' 23:", 250], ["As appropriate, please indicate the number of Opportunity Youth successfully placed into supported\xa0or permanent housing\xa0in FY' 23:", 200], ['Please Indicate Number Of Youth In Program', 600], ["Please Indicate Number Of Opportunity Youth achieving different educational milestones in FY' 23, such as HS diploma, GED, college matriculation", 400]], 'index_names': [None], 'column_names': [None]}, {'index': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 'columns': ['Clipper Ship Standardized Excel Sheet', 'Unnamed: 1'], 'data': [['Instructions ', "nan"], ['Instructions: Please name this excel sheet using this template: Company_Name_ClipperShipGrant_Year Example: Brandeis_University_ClipperShipGrant_2023', "nan"], ['*may add more instructions and make it look pretty and professional i guess', "nan"], ["nan", "nan"], ['Company Specifics', "nan"], ['Company Name', 'Capital One'], ['Quick Description', 'a bank'], ['Contact Info', 'idk man yolo'], ['Current Fiscal Year', 2023], ['Overall Numbers', "nan"], ['Please Indicate The Amount Of Money Given By Clipper Ship', 10000], ['Please Indicate The Amount Of Money Used By Clipper Ship', 9549], ["Please indicate the number of Opportunity Youth (ages 16-24) placed into employment in FY' 23:", 400], ["As appropriate, please indicate the number of Opportunity Youth successfully placed into supported\xa0or permanent housing\xa0in FY' 23:", 600], ['Please Indicate Number Of Youth In Program', 10000], ["Please Indicate Number Of Opportunity Youth achieving different educational milestones in FY' 23, such as HS diploma, GED, college matriculation", 300]], 'index_names': [None], 'column_names': [None]}, {'index': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 'columns': ['Clipper Ship Standardized Excel Sheet', 'Unnamed: 1'], 'data': [['Instructions ', "nan"], ['Instructions: Please name this excel sheet using this template: Company_Name_ClipperShipGrant_Year Example: Brandeis_University_ClipperShipGrant_2023', "nan"], ['*may add more instructions and make it look pretty and professional i guess', "nan"], ["nan", "nan"], ['Company Specifics', "nan"], ['Company Name', 'Capital One'], ['Quick Description', 'A bank'], ['Contact Info', 'idk man yolo'], ['Current Fiscal Year', 2021], ['Overall Numbers', "nan"], ['Please Indicate The Amount Of Money Given By Clipper Ship', 15783], ['Please Indicate The Amount Of Money Used By Clipper Ship', 12373], ["Please indicate the number of Opportunity Youth (ages 16-24) placed into employment in FY' 23:", 1234], ["As appropriate, please indicate the number of Opportunity Youth successfully placed into supported\xa0or permanent housing\xa0in FY' 23:", 433], ['Please Indicate Number Of Youth In Program', 942], ["Please Indicate Number Of Opportunity Youth achieving different educational milestones in FY' 23, such as HS diploma, GED, college matriculation", 124]], 'index_names': [None], 'column_names': [None]}, {'index': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 'columns': ['Clipper Ship Standardized Excel Sheet', 'Unnamed: 1'], 'data': [['Instructions ', "nan"], ['Instructions: Please name this excel sheet using this template: Company_Name_ClipperShipGrant_Year Example: Brandeis_University_ClipperShipGrant_2023', "nan"], ['*may add more instructions and make it look pretty and professional i guess', "nan"], ["nan", "nan"], ['Company Specifics', "nan"], ['Company Name', 'Google'], ['Quick Description', 'Tech Company'], ['Contact Info', 'idk man yolo'], ['Current Fiscal Year', 2019], ['Overall Numbers', "nan"], ['Please Indicate The Amount Of Money Given By Clipper Ship', 7894], ['Please Indicate The Amount Of Money Used By Clipper Ship', 5938], ["Please indicate the number of Opportunity Youth (ages 16-24) placed into employment in FY' 23:", 495], ["As appropriate, please indicate the number of Opportunity Youth successfully placed into supported\xa0or permanent housing\xa0in FY' 23:", 584], ['Please Indicate Number Of Youth In Program', 1495], ["Please Indicate Number Of Opportunity Youth achieving different educational milestones in FY' 23, such as HS diploma, GED, college matriculation", 284]], 'index_names': [None], 'column_names': [None]}, {'index': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 'columns': ['Clipper Ship Standardized Excel Sheet', 'Unnamed: 1'], 'data': [['Instructions ', "nan"], ['Instructions: Please name this excel sheet using this template: Company_Name_ClipperShipGrant_Year Example: Brandeis_University_ClipperShipGrant_2023', "nan"], ['*may add more instructions and make it look pretty and professional i guess', "nan"], ["nan", "nan"], ['Company Specifics', "nan"], ['Company Name', 'Google'], ['Quick Description', 'Tech Company'], ['Contact Info', 'idk man yolo'], ['Current Fiscal Year', 2020], ['Overall Numbers', "nan"], ['Please Indicate The Amount Of Money Given By Clipper Ship', 8010], ['Please Indicate The Amount Of Money Used By Clipper Ship', 7012], ["Please indicate the number of Opportunity Youth (ages 16-24) placed into employment in FY' 23:", 685], ["As appropriate, please indicate the number of Opportunity Youth successfully placed into supported\xa0or permanent housing\xa0in FY' 23:", 940], ['Please Indicate Number Of Youth In Program', 1950], ["Please Indicate Number Of Opportunity Youth achieving different educational milestones in FY' 23, such as HS diploma, GED, college matriculation", 193]], 'index_names': [None], 'column_names': [None]}, {'index': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 'columns': ['Clipper Ship Standardized Excel Sheet', 'Unnamed: 1'], 'data': [['Instructions ', "nan"], ['Instructions: Please name this excel sheet using this template: Company_Name_ClipperShipGrant_Year Example: Brandeis_University_ClipperShipGrant_2023', "nan"], ['*may add more instructions and make it look pretty and professional i guess', "nan"], ["nan", "nan"], ['Company Specifics', "nan"], ['Company Name', 'Google'], ['Quick Description', 'Tech Company'], ['Contact Info', 'idk man yolo'], ['Current Fiscal Year', 2021], ['Overall Numbers', "nan"], ['Please Indicate The Amount Of Money Given By Clipper Ship', 11200], ['Please Indicate The Amount Of Money Used By Clipper Ship', 2785], ["Please indicate the number of Opportunity Youth (ages 16-24) placed into employment in FY' 23:", 753], ["As appropriate, please indicate the number of Opportunity Youth successfully placed into supported\xa0or permanent housing\xa0in FY' 23:", 965], ['Please Indicate Number Of Youth In Program', 2341], ["Please Indicate Number Of Opportunity Youth achieving different educational milestones in FY' 23, such as HS diploma, GED, college matriculation", 124]], 'index_names': [None], 'column_names': [None]}, {'index': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 'columns': ['Clipper Ship Standardized Excel Sheet', 'Unnamed: 1'], 'data': [['Instructions ', "nan"], ['Instructions: Please name this excel sheet using this template: Company_Name_ClipperShipGrant_Year Example: Brandeis_University_ClipperShipGrant_2023', "nan"], ['*may add more instructions and make it look pretty and professional i guess', "nan"], ["nan", "nan"], ['Company Specifics', "nan"], ['Company Name', 'Google'], ['Quick Description', 'Tech Company'], ['Contact Info', 'idk man yolo'], ['Current Fiscal Year', 2022], ['Overall Numbers', "nan"], ['Please Indicate The Amount Of Money Given By Clipper Ship', 10000], ['Please Indicate The Amount Of Money Used By Clipper Ship', 8000], ["Please indicate the number of Opportunity Youth (ages 16-24) placed into employment in FY' 23:", 300], ["As appropriate, please indicate the number of Opportunity Youth successfully placed into supported\xa0or permanent housing\xa0in FY' 23:", 400], ['Please Indicate Number Of Youth In Program', 1000], ["Please Indicate Number Of Opportunity Youth achieving different educational milestones in FY' 23, such as HS diploma, GED, college matriculation", 450]], 'index_names': [None], 'column_names': [None]}, {'index': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 'columns': ['Clipper Ship Standardized Excel Sheet', 'Unnamed: 1'], 'data': [['Instructions ', "nan"], ['Instructions: Please name this excel sheet using this template: Company_Name_ClipperShipGrant_Year Example: Brandeis_University_ClipperShipGrant_2023', "nan"], ['*may add more instructions and make it look pretty and professional i guess', "nan"], ["nan", "nan"], ['Company Specifics', "nan"], ['Company Name', 'Google'], ['Quick Description', 'a tech thingy'], ['Contact Info', 'idk man yolo'], ['Current Fiscal Year', 2023], ['Overall Numbers', "nan"], ['Please Indicate The Amount Of Money Given By Clipper Ship', 3000000], ['Please Indicate The Amount Of Money Used By Clipper Ship', 300000], ["Please indicate the number of Opportunity Youth (ages 16-24) placed into employment in FY' 23:", 40000], ["As appropriate, please indicate the number of Opportunity Youth successfully placed into supported\xa0or permanent housing\xa0in FY' 23:", 60000], ['Please Indicate Number Of Youth In Program', 1000000], ["Please Indicate Number Of Opportunity Youth achieving different educational milestones in FY' 23, such as HS diploma, GED, college matriculation", 30000]], 'index_names': [None], 'column_names': [None]}]
+           orgs = set()
+           datadict = {
+           0:[],
+           1:[],
+           2:[],
+           3:[],
+           4:[],
+           5:[]
+           }
+
+           orgdict = {}
+           
+
+           orgdict["Totals"] = pd.DataFrame(columns = ["Year", "Please Indicate The Amount Of Money Given By Clipper Ship", "Please Indicate The Amount Of Money Used By Clipper Ship", "Please indicate the number of Opportunity Youth (ages 16-24) placed into employment in FY' 23:", "As appropriate, please indicate the number of Opportunity Youth successfully placed into supported or permanent housing in FY' 23:", "Please Indicate Number Of Youth In Program", "Please Indicate Number Of Opportunity Youth achieving different educational milestones in FY' 23, such as HS diploma, GED, college matriculation"])
+           totaldict = dict()
+
+           for i in range(len(dics)):
+               df = pd.DataFrame(dics)
+               dfdata = df["data"].iloc[i]
+               overalldata = dfdata[10:16]
+               overalldf = pd.DataFrame(overalldata, columns=['Question', 'Value'])
+               overalldf = overalldf[['Question', 'Value']]
+
+
+
+               specsdata = dfdata[5:9]
+               specsdf = pd.DataFrame(specsdata, columns=['Question', 'Value'])
+               specsdf = specsdf[['Question', 'Value']]
+
+
+
+               if specsdf["Value"][0] not in orgs:
+                   name = specsdf['Value'][0]
+                   year = int(specsdf['Value'][3])
+                   orgs.add(name)
+                   for i in range(overalldf.shape[0]):
+                       question = overalldf['Question'][i]
+                       datadict[i].append(int(overalldf["Value"][i]))
+                   
+                           
+                           
+
+               if specsdf['Value'][0] not in orgdict.keys():
+                   name = specsdf['Value'][0]
+                   orgdict[name] = pd.DataFrame(specsdf['Value'].iloc[3:4])
+                   orgdict.update({name: orgdict.get(name).rename(columns = {'Value': 'Year'})})
+                   if int(specsdf['Value'][3]) in totaldict.keys():
+                       for i in range(overalldf.shape[0]):
+                           orgdict.get(name)[overalldf['Question'][i]] = [int(overalldf["Value"][i])]
+                           totaldict.get(int(specsdf['Value'][3]))[i] += int(overalldf["Value"][i])
+                   else:
+                       totaldict[int(specsdf['Value'][3])] = []
+                       for i in range(overalldf.shape[0]):
+                           orgdict.get(name)[overalldf['Question'][i]] = [int(overalldf["Value"][i])]
+                           totaldict.get(int(specsdf['Value'][3])).append(int(overalldf['Value'][i]))
+               
+               
+               else:
+                   newrow = [specsdf['Value'].iloc[3]]
+                   if int(specsdf['Value'][3]) in totaldict.keys():
+                       for i in range(overalldf.shape[0]):
+                           newrow.append(int(overalldf["Value"][i]))
+                           totaldict.get(int(specsdf['Value'][3]))[i] += int(overalldf["Value"][i])
+                   else:
+                       totaldict[int(specsdf['Value'][3])] = []
+                       for i in range(overalldf.shape[0]):
+                           newrow.append(int(overalldf["Value"][i]))
+                           totaldict.get(int(specsdf['Value'][3])).append(int(overalldf['Value'][i]))
+                   updatedf = orgdict.get(specsdf['Value'][0]) 
+                   updatedf.loc[len(updatedf.index)] = newrow
+                   updatedf['Year'] = updatedf['Year'].astype('int')
+                   orgdict.update({specsdf["Value"][0]: updatedf})
+
+
+           for key in orgdict.keys():
+               for j in range(overalldf.shape[0]):
+                   if len(orgdict.get(key)) > 1: #can use this line if you want to remove plots for companies with only one year
+                       plt.plot(orgdict.get(key)['Year'], orgdict.get(key)[overalldf['Question'][j]])
+                       plt.title(str(overalldf['Question'][j])+ " by year for "+ str(key))
+                       plt.show()
+                   
+           for i in range(overalldf.shape[0]):
+               plt.bar(list(orgs), height = datadict[i], color = "maroon")
+               plt.title(overalldf['Question'][i])
+               plt.xlabel("Organization")
+               plt.ylabel("Value")
+               plt.show()
+
+           for i in range(len(overalldf['Question'])):
+               keyarr = []
+               plotarr = []
+               for key in totaldict.keys():
+                   keyarr.append(key)
+                   plotarr.append(totaldict.get(key)[i])
+               plt.plot(keyarr, plotarr)
+               plt.title("Yearly Trends For " + str(overalldf['Question'][i]) + " Totals")
+               plt.xlabel("Year")
+               plt.ylabel("Value")
+               plt.show()
+        
+        </py-script>
+
        <!-- <script src="/frontend/javascript/dynamic.js"></script> -->
        <script src="/javascript/dropbox.js"></script>
    </body>
-   
-   </html>
-       <py-script>
+       
 
-       </py-script>
-   </body>
+
+   </html>
+
